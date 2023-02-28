@@ -11,4 +11,10 @@ let books = {
       10: {"author": "Samuel Beckett","title": "Molloy, Malone Dies, The Unnamable, the trilogy", "reviews": {} }
 }
 
-module.exports=books;
+let booksAsync = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve(books);
+    }, 2000);
+})
+
+module.exports = { books, booksAsync };
